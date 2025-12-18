@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.javafx_praktikum.controller.MainController">
+
+    <top>
+        <Label text="Gym Workout Manager" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </Label>
+    </top>
+
+    <center>
+        <TableView fx:id="workoutTable">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+                <TableColumn fx:id="colTargetMuscle" text="Target Muscle" prefWidth="150"/>
+                <TableColumn fx:id="colDuration" text="Repetition" prefWidth="120"/>
+                <TableColumn fx:id="colDifficulty" text="Difficulty" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="8" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <GridPane hgap="10" vgap="8">
+
+                <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="exerciseComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Target Muscle:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="targetMuscleComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Repetition :" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="durationField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Difficulty:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="difficultyComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            </GridPane>
+
+            <HBox spacing="10">
+                <Button fx:id="addButton" text="Add" onAction="#onAddClicked"/>
+                <Button fx:id="updateButton" text="Update" onAction="#onUpdateClicked"/>
+                <Button fx:id="deleteButton" text="Delete" onAction="#onDeleteClicked"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
